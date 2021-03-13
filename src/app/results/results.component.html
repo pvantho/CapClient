@@ -1,0 +1,32 @@
+<div class="container bg-light">
+  <div class="text-center mt-4">
+    <h1>
+    Data Returned by WEB API
+    </h1>
+  </div>
+
+  <ng-container *ngFor="let item of list ">
+    <ul>{{item.subject}}
+      <ng-container *ngFor="let result of item.results">
+        <li style="padding-left: 32px;"> {{result.year}} {{result.grade}}</li>
+      </ng-container>
+    </ul>
+  </ng-container>
+</div>
+
+<div class="container bg-light">
+  <div class="text-center mt-4">
+    <h1>
+      Data Sorted by Subject and Grouped by year
+    </h1>
+  </div>
+
+  <ng-container *ngFor="let result of results ">
+    <ul>{{result?.year}}
+      <ng-container *ngFor="let subject of result?.subjects">
+        <li style="padding-left: 32px;"> {{subject}}</li>
+      </ng-container>
+    </ul>
+  </ng-container>
+</div>
+
